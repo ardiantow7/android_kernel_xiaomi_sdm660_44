@@ -61,7 +61,7 @@ KSU_SRC := $(realpath $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 
 KSU_VERSION := 40895
 KSU_TAG_NAME := v4.2.0-rc1
-KSU_COMMIT_SHA := 83614d89
+KSU_COMMIT_SHA := a543d21c
 KSU_BRANCH_NAME := main
 
 $(info -- ReSukiSU manual version code: $(KSU_VERSION))
