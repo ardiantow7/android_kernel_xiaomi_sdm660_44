@@ -51,7 +51,7 @@ on:
   #
   push:
     branches:
-      - test-sf
+      - qti-ts
 
 env:
   KERNEL_DIR: ${{ github.workspace }}/kernel
