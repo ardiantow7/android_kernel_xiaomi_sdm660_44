@@ -15,6 +15,7 @@
 #include <linux/mutex.h>
 #include "avc.h"
 #include "services.h"
+#include <linux/export.h>
 
 /*
  * The selinux_status_page shall be exposed to userspace applications
@@ -35,8 +36,8 @@
  * In most cases, application shall confirm the kernel status is not
  * changed without any system call invocations.
  */
-static struct page *selinux_status_page;
-static DEFINE_MUTEX(selinux_status_lock);
+struct page *selinux_status_page;
+DEFINE_MUTEX(selinux_status_lock);
 
 /*
  * selinux_kernel_status_page
@@ -124,3 +125,6 @@ void selinux_status_update_policyload(int seqno)
 	}
 	mutex_unlock(&selinux_status_lock);
 }
+
+EXPORT_SYMBOL(selinux_status_page);
+EXPORT_SYMBOL(selinux_status_lock);
